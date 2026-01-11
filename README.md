@@ -1,13 +1,13 @@
+<h1 align="center">⚡ EVChargeEnv</h1>
 <p align="center">
   <img src="assets/evchargeenv-banner.png" width="800" />
 </p>
 
-<h1 align="center">⚡ EVChargeEnv</h1>
 <h3 align="center">Green Agent Benchmark for EV Charging Optimization</h3>
 
 ---
 
-## 🌟 Overview
+## Overview
 
 EVChargeEnv is a lightweight, stochastic reinforcement-learning environment designed for the  
 AgentX + AgentBeats Competition (Berkeley RDI 2025).
@@ -22,7 +22,7 @@ It simulates:
 
 ---
 
-## 🎯 Task Goal
+## Task Goal
 
 The purple agent must:
 
@@ -33,7 +33,7 @@ The purple agent must:
 
 ---
 
-## 🧠 State Space (Observation)
+## State Space (Observation)
 
 The agent receives:
 
@@ -41,13 +41,13 @@ charge_level (0-1), price (0-1), grid_load (0-1), time_step_norm (0-1)
 
 ---
 
-## 🎛️ Action Space
+## Action Space
 
 Continuous charge rate 0.0 → 1.0.
 
 ---
 
-## 🧮 Reward Function
+## Reward Function
 
 Reward combines:
 
@@ -59,19 +59,19 @@ Reward combines:
 
 ---
 
-## 🔥 Scenarios
+## Scenarios
 
 easy / medium / hard difficulty with different volatility and load patterns.
 
 ---
 
-## 🔁 Episode Termination
+## Episode Termination
 
 Ends if full charge or max steps reached.
 
 ---
 
-## 📊 Example Agent Behaviors
+## Example Agent Behaviors
 
 Greedy agent = fast but expensive  
 Price-aware agent = slower but cheaper  
@@ -79,7 +79,7 @@ Random agent = unstable
 
 ---
 
-## 🧪 Evaluation Output
+## Evaluation Output
 
 Running:
 
@@ -95,13 +95,13 @@ Generates JSON like:
 
 ---
 
-## 🐳 Docker Support
+## Docker Support
 
 Image: oozan/evchargeenv:latest
 
 ---
 
-## 🧩 File Structure
+## File Structure
 
 env/  
 agent/  
@@ -112,7 +112,7 @@ README.md
 
 ---
 
-## 📈 Future Improvements
+## Future Improvements
 
 - renewable energy factor
 - blackout events
