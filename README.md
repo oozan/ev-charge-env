@@ -1,8 +1,4 @@
 <h1 align="center">⚡ EVChargeEnv</h1>
-<p align="center">
-  <img src="assets/evchargeenv-banner.png" width="800" />
-</p>
-
 <h3 align="center">Green Agent Benchmark for EV Charging Optimization</h3>
 
 ---
