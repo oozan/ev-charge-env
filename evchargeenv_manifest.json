@@ -1,0 +1,37 @@
+{
+  "name": "EVChargeEnv",
+  "description": "An EV charging optimization benchmark environment for testing agents under dynamic prices and variable grid load.",
+  "version": "0.1.0",
+  "task_type": "continuous_control",
+  "domain": "energy_ev_charging",
+  "observation_space": {
+    "type": "Box",
+    "shape": [4],
+    "components": [
+      "charge_level (0-1)",
+      "price (0-1)",
+      "grid_load (0-1)",
+      "time_step_norm (0-1)"
+    ]
+  },
+  "action_space": {
+    "type": "Box",
+    "shape": [1],
+    "description": "continuous charging rate in [0, 1]"
+  },
+  "scenarios": ["easy", "medium", "hard"],
+  "reward_components": [
+    "progress_reward (battery increase)",
+    "cost_penalty (price * charge_rate)",
+    "overload_penalty (high grid load + high charging)",
+    "time_penalty (encourages faster completion)"
+  ],
+  "termination_conditions": [
+    "battery full (charge_level >= 1.0)",
+    "maximum step count reached"
+  ],
+  "evaluation_output": {
+    "format": "json",
+    "fields": ["avg_reward", "avg_steps", "episodes"]
+  }
+}

@@ -120,3 +120,19 @@ README.md
 - RL baseline
 - trajectory visualizer
 - mini-game UI
+
+## Benchmark Specification
+
+This repository also includes a machine-readable benchmark manifest:
+
+- `evchargeenv_manifest.json`
+
+It documents:
+
+- state and action spaces
+- reward components
+- termination conditions
+- supported scenarios (`easy`, `medium`, `hard`)
+- evaluation output format (JSON fields)
+
+This makes EVChargeEnv easier to integrate as a standardized benchmark and aligns with the spirit of the OpenEnv challenge: environments that are transparent, reproducible, and extensible.
