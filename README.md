@@ -1,8 +1,8 @@
+# EVChargeEnv – Green Agent Benchmark
+
 <p align="center">
   <img src="assets/evchargeenv-banner.png" alt="EVChargeEnv banner" width="800" />
 </p>
-
-# EVChargeEnv – Green Agent Benchmark
 
 EVChargeEnv is a lightweight reinforcement learning environment for the AgentX – AgentBeats competition.  
 It simulates **electric vehicle (EV) charging** under **dynamic electricity prices** and **variable grid load**.
