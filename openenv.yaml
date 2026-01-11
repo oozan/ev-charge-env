@@ -1,0 +1,51 @@
+id: EVChargeEnv-v0
+name: EVChargeEnv
+version: "0.1.0"
+description: >
+  EVChargeEnv is a continuous-control electric vehicle charging environment
+  with dynamic pricing, fluctuating grid load, and multi-objective reward signals.
+  It is suitable for benchmarking agentic behavior and testing adaptation
+  to non-stationary conditions.
+
+authors:
+  - name: Ozan Özayranci
+    github: "https://github.com/oozan"
+
+license: mit
+
+environment:
+  observation_space:
+    shape: [4]
+    type: box
+    description:
+      - charge_level (0–1)
+      - price (0–1)
+      - grid_load (0–1)
+      - time_step_norm (0–1)
+  action_space:
+    shape: [1]
+    type: box
+    description: continuous charge rate (0–1)
+  reward_components:
+    - progress_reward
+    - cost_penalty
+    - overload_penalty
+    - time_penalty
+  termination_conditions:
+    - charge >= 1.0
+    - max_steps reached
+
+scenarios:
+  - easy
+  - medium
+  - hard
+
+entry_point: env.ev_charge_env:EVChargeEnv
+
+tags:
+  - energy
+  - control
+  - continuous
+  - stochastic
+  - reinforcement-learning
+  - openenv
