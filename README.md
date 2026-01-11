@@ -1,3 +1,13 @@
+---
+tags:
+  - reinforcement-learning
+  - openenv
+  - environment
+  - gymnasium
+license: mit
+library_name: openenv
+---
+
 <h1 align="center">⚡ EVChargeEnv</h1>
 <p align="center">
   <img src="assets/evchargeenv-banner.png" width="800" />
