@@ -1,54 +1,122 @@
-# EVChargeEnv – Green Agent Benchmark
-
 <p align="center">
-  <img src="assets/evchargeenv-banner.png" alt="EVChargeEnv banner" width="800" />
+  <img src="assets/evchargeenv-banner.png" width="800" />
 </p>
 
-EVChargeEnv is a lightweight reinforcement learning environment for the AgentX – AgentBeats competition.  
-It simulates **electric vehicle (EV) charging** under **dynamic electricity prices** and **variable grid load**.
-
-The goal for a purple (assessee) agent is to:
-
-- charge the battery to full,
-- while minimizing cost,
-- and avoiding grid overload.
+<h1 align="center">⚡ EVChargeEnv</h1>
+<h3 align="center">Green Agent Benchmark for EV Charging Optimization</h3>
 
 ---
 
-## Environment Overview
+## 🌟 Overview
 
-- **State**:  
-  `[charge_level, price, grid_load, time_step_norm]`
+EVChargeEnv is a lightweight, stochastic reinforcement-learning environment designed for the  
+AgentX + AgentBeats Competition (Berkeley RDI 2025).
 
-  - `charge_level` ∈ [0, 1]
-  - `price` ∈ [0, 1] (fluctuating)
-  - `grid_load` ∈ [0, 1] (fluctuating)
-  - `time_step_norm` ∈ [0, 1] (normalized step index)
+It simulates:
 
-- **Action**:  
-  Continuous charging rate `a` ∈ [0, 1].
-
-- **Dynamics**:
-
-  - Battery increases by `a * charge_rate_scale`.
-  - Price and grid load follow noisy processes around scenario-specific baselines.
-  - Different scenarios: `easy`, `medium`, `hard` (configured via `scenario` argument).
-
-- **Reward (per step)**:
-
-  - **+ progress_reward**: reward for moving charge toward full.
-  - **− cost_penalty**: higher price × higher charging rate = more penalty.
-  - **− overload_penalty**: penalty if charging when effective load exceeds a threshold.
-  - **− small time_penalty**: encourages faster completion.
-
-- **Episode ends when**:
-  - battery is full, or
-  - max number of steps is reached.
+- Electric vehicle battery charging
+- Dynamic electricity pricing
+- Fluctuating grid load
+- Continuous control actions
+- Multi-objective tradeoffs (cost vs. speed vs. grid stability)
 
 ---
 
-## Installation
+## 🎯 Task Goal
 
-```bash
-pip install -r requirements.txt
-```
+The purple agent must:
+
+- Charge the EV battery to full (1.0)
+- Minimize electricity cost
+- Avoid high grid load
+- Adapt to changing conditions
+
+---
+
+## 🧠 State Space (Observation)
+
+The agent receives:
+
+charge_level (0-1), price (0-1), grid_load (0-1), time_step_norm (0-1)
+
+---
+
+## 🎛️ Action Space
+
+Continuous charge rate 0.0 → 1.0.
+
+---
+
+## 🧮 Reward Function
+
+Reward combines:
+
+- progress_reward
+
+* cost_penalty
+* overload_penalty
+* time_penalty
+
+---
+
+## 🔥 Scenarios
+
+easy / medium / hard difficulty with different volatility and load patterns.
+
+---
+
+## 🔁 Episode Termination
+
+Ends if full charge or max steps reached.
+
+---
+
+## 📊 Example Agent Behaviors
+
+Greedy agent = fast but expensive  
+Price-aware agent = slower but cheaper  
+Random agent = unstable
+
+---
+
+## 🧪 Evaluation Output
+
+Running:
+
+python run_evaluation.py
+
+Generates JSON like:
+
+{
+"avg_reward": ...,
+"avg_steps": ...,
+"episodes": 5
+}
+
+---
+
+## 🐳 Docker Support
+
+Image: oozan/evchargeenv:latest
+
+---
+
+## 🧩 File Structure
+
+env/  
+agent/  
+run_evaluation.py  
+Dockerfile  
+requirements.txt  
+README.md
+
+---
+
+## 📈 Future Improvements
+
+- renewable energy factor
+- blackout events
+- degradation model
+- RL baseline
+- trajectory visualizer
+- mini-game UI
