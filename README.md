@@ -1,4 +1,8 @@
 <h1 align="center">⚡ EVChargeEnv</h1>
+<p align="center">
+  <img src="assets/evchargeenv-banner.png" width="800" />
+</p>
+
 <h3 align="center">Green Agent Benchmark for EV Charging Optimization</h3>
 
 ---
@@ -132,3 +136,4 @@ It documents:
 - evaluation output format (JSON fields)
 
 This makes EVChargeEnv easier to integrate as a standardized benchmark and aligns with the spirit of the OpenEnv challenge: environments that are transparent, reproducible, and extensible.
+''
